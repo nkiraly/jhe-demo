@@ -11,4 +11,4 @@ Yard Sales - MySQL 5.7
 Yard Purchasing - XML files
 Yard Inventory - CSV file
 Online Inventory - Redis 3.0
-Online Sales - PostgreSQL 8.4
+Online Sales - REST API

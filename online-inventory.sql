@@ -1,16 +1,17 @@
+# add redis_fdw extension to this database
 CREATE EXTENSION redis_fdw;
 
-
+# specify redis connection details with FDW server entry
 CREATE SERVER online_inventory
   FOREIGN DATA WRAPPER redis_fdw 
   OPTIONS (host '127.0.0.1', port '6379');
 
-
+# map public access to specify redis password
 CREATE USER MAPPING FOR PUBLIC
   SERVER online_inventory
   OPTIONS (password 'janeyg1');
 
-
+# map inventory hash table as a foreign table
 CREATE FOREIGN TABLE online_inventory_rft_hash (
   key    TEXT,
   field  TEXT,
@@ -20,4 +21,6 @@ CREATE FOREIGN TABLE online_inventory_rft_hash (
   OPTIONS (tabletype 'hash');
 
 
-SELECT * FROM online_inventory_rft_hash;
+# select  etc from table to get data from redis
+# NOTE: you must specify WHERE key for fdw to be able to pull the hash list data
+SELECT * FROM online_inventory_rft_hash where key = 'inventory';

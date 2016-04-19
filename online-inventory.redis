@@ -1,6 +1,11 @@
+AUTH janeyg1
+
+# set multiple inventory hash fields to number on hand
 HMSET inventory BSH72 6 BCCP39 5
 
 
+# what keys are in the inventory hash?
 HKEYS inventory
 
+# dump all keys and values in the inventory hash
 HGETALL inventory
