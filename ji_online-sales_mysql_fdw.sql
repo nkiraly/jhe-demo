@@ -10,7 +10,7 @@ CREATE SERVER online_sales_server
 CREATE USER MAPPING FOR janey_is
   SERVER online_sales_server
   OPTIONS (username 'jifdw', password 'password1');
-CREATE USER MAPPING FOR pgsql
+CREATE USER MAPPING FOR postgres
   SERVER online_sales_server
   OPTIONS (username 'jifdw', password 'password1');
 
@@ -75,3 +75,4 @@ SELECT * FROM online_sales.customer ;
 SELECT * FROM online_sales.salesorder ;
 
 SELECT * FROM online_sales.salesorder_product ;
+

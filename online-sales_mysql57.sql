@@ -1,7 +1,8 @@
--- ALTER USER 'root'@'localhost' IDENTIFIED BY 'password1';
--- CREATE DATABASE online_sales; USE online_sales;
--- CREATE USER 'jifdw'@'localhost' IDENTIFIED BY 'password1';
--- GRANT ALL ON online_sales.* TO 'jifdw'@'localhost';
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'password1';
+CREATE DATABASE online_sales; USE online_sales;
+CREATE USER 'jifdw'@'localhost' IDENTIFIED BY 'password1';
+GRANT ALL ON online_sales.* TO 'jifdw'@'localhost';
+
 
 CREATE TABLE product (
   product_id INT NOT NULL,
