@@ -17,12 +17,12 @@
     <Country>USA</Country>
   </Address>
   <Items>
-    <Item PartNumber="BS-H72">
+    <Item PartNumber="BSH72">
       <Name>Hydraulic Box Stacker</Name>
       <Quantity>3</Quantity>
       <Price>248.00</Price>
     </Item>
-    <Item PartNumber="BC-CP39">
+    <Item PartNumber="BCCP39">
       <Name>Crush Proof Baby Crib</Name>
       <Quantity>2</Quantity>
       <Price>179.00</Price>

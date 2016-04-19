@@ -67,8 +67,8 @@ CREATE TABLE salesorder_product (
 
 
 
-INSERT INTO product ( product_id, product_name, product_number, product_price, product_cost ) VALUES ( 201, 'Hydraulic Box Stacker', 'BS-H72', 309.95, 248.00 );
-INSERT INTO product ( product_id, product_name, product_number, product_price, product_cost ) VALUES ( 204, 'Crush Proof Baby Crib', 'BC-CP39', 224.95, 179.00 );
+INSERT INTO product ( product_id, product_name, product_number, product_price, product_cost ) VALUES ( 201, 'Hydraulic Box Stacker', 'BSH72', 309.95, 248.00 );
+INSERT INTO product ( product_id, product_name, product_number, product_price, product_cost ) VALUES ( 204, 'Crush Proof Baby Crib', 'BCCP39', 224.95, 179.00 );
 
 INSERT INTO product_group ( product_group_id, product_group_name ) VALUES ( 501, 'Box Stackers' );
 INSERT INTO product_group ( product_group_id, product_group_name ) VALUES ( 504, 'Baby Furniture' );
