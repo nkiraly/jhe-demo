@@ -1,0 +1,6 @@
+HMSET inventory BSH72 6 BCCP39 5
+
+
+HKEYS inventory
+
+HGETALL inventory
