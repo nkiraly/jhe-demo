@@ -2,23 +2,23 @@
 CREATE EXTENSION mysql_fdw;
 
 -- specify mysql connection details as FDW server
-CREATE SERVER yard_sales_server
+CREATE SERVER online_sales_server
   FOREIGN DATA WRAPPER mysql_fdw
   OPTIONS (host '127.0.0.1', port '3306');
 
 -- map janey_is access as mysql user jifdw
 CREATE USER MAPPING FOR janey_is
-  SERVER yard_sales_server
+  SERVER online_sales_server
   OPTIONS (username 'jifdw', password 'password1');
 CREATE USER MAPPING FOR pgsql
-  SERVER yard_sales_server
+  SERVER online_sales_server
   OPTIONS (username 'jifdw', password 'password1');
 
--- schema for yard_sales foreign tables
-CREATE SCHEMA yard_sales;
+-- schema for online_sales foreign tables
+CREATE SCHEMA online_sales;
 
--- map yard sales foreign table product
-CREATE FOREIGN TABLE yard_sales.product (
+-- map online_sales foreign tables
+CREATE FOREIGN TABLE online_sales.product (
   product_id INT,
   product_name VARCHAR(100),
   product_description VARCHAR(1000),
@@ -28,10 +28,10 @@ CREATE FOREIGN TABLE yard_sales.product (
   product_added_date TIMESTAMP,
   product_cost NUMERIC(15,2),
   product_vendor VARCHAR(200)
-) SERVER yard_sales_server
-  OPTIONS (dbname 'janey_yard_sales', table_name 'product');
+) SERVER online_sales_server
+  OPTIONS (dbname 'online_sales', table_name 'product');
 
-CREATE FOREIGN TABLE yard_sales.customer (
+CREATE FOREIGN TABLE online_sales.customer (
   customer_id INT NOT NULL,
   customer_first_name VARCHAR(100),
   customer_last_name VARCHAR(100),
@@ -41,10 +41,10 @@ CREATE FOREIGN TABLE yard_sales.customer (
   customer_city VARCHAR(100),
   customer_state VARCHAR(100),
   customer_zip VARCHAR(100)
-) SERVER yard_sales_server
-  OPTIONS (dbname 'janey_yard_sales', table_name 'customer');
+) SERVER online_sales_server
+  OPTIONS (dbname 'online_sales', table_name 'customer');
 
-CREATE FOREIGN TABLE yard_sales.salesorder (
+CREATE FOREIGN TABLE online_sales.salesorder (
   salesorder_id INT NOT NULL,
   salesorder_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   salesorder_status VARCHAR(64) NOT NULL,
@@ -56,22 +56,22 @@ CREATE FOREIGN TABLE yard_sales.salesorder (
   salesorder_city VARCHAR(100),
   salesorder_state VARCHAR(100),
   salesorder_zip VARCHAR(100)
-) SERVER yard_sales_server
-  OPTIONS (dbname 'janey_yard_sales', table_name 'salesorder');
+) SERVER online_sales_server
+  OPTIONS (dbname 'online_sales', table_name 'salesorder');
 
-CREATE FOREIGN TABLE yard_sales.salesorder_product (
+CREATE FOREIGN TABLE online_sales.salesorder_product (
   salesorder_id INT NOT NULL,
   product_id INT NOT NULL
-) SERVER yard_sales_server
-  OPTIONS (dbname 'janey_yard_sales', table_name 'salesorder_product');
+) SERVER online_sales_server
+  OPTIONS (dbname 'online_sales', table_name 'salesorder_product');
 
 
 
 -- select etc from table to get data from mysql
-SELECT * FROM yard_sales.product ;
+SELECT * FROM online_sales.product ;
 
-SELECT * FROM yard_sales.customer ;
+SELECT * FROM online_sales.customer ;
 
-SELECT * FROM yard_sales.salesorder ;
+SELECT * FROM online_sales.salesorder ;
 
-SELECT * FROM yard_sales.salesorder_product ;
+SELECT * FROM online_sales.salesorder_product ;

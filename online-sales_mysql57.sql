@@ -1,7 +1,7 @@
 -- ALTER USER 'root'@'localhost' IDENTIFIED BY 'password1';
--- CREATE DATABASE janey_yard_sales; USE janey_yard_sales;
+-- CREATE DATABASE online_sales; USE online_sales;
 -- CREATE USER 'jifdw'@'localhost' IDENTIFIED BY 'password1';
--- GRANT ALL ON janey_yard_sales.* TO 'jifdw'@'localhost';
+-- GRANT ALL ON online_sales.* TO 'jifdw'@'localhost';
 
 CREATE TABLE product (
   product_id INT NOT NULL,

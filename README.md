@@ -7,8 +7,9 @@ For more information, see http://www.meetup.com/Pittsburgh-PostgreSQL-Users-Grou
 
 # Systems in Place
 
-Yard Sales - MySQL 5.7
+Yard Sales - Google Sheets
 Yard Purchasing - XML files
-Yard Inventory - CSV file
+Yard Inventory - JSON file
 Online Inventory - Redis 3.0
-Online Sales - REST API
+Online Sales - MySQL 5.7
+
