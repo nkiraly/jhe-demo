@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<PurchaseOrder PurchaseOrderNumber="2577" OrderDate="2016-02-05T19:37">
+  <Address Type="Shipping">
+    <Name>Janey Heavy Equipment</Name>
+    <Street>154 Industrial Boulevard</Street>
+    <City>Steel City</City>
+    <State>PA</State>
+    <Zip>15202</Zip>
+    <Country>USA</Country>
+  </Address>
+  <Address Type="Billing">
+    <Name>Gustav Janey</Name>
+    <Street>346 Business Road</Street>
+    <City>Straw City</City>
+    <State>PA</State>
+    <Zip>15212</Zip>
+    <Country>USA</Country>
+  </Address>
+  <Items>
+    <Item PartNumber="BS-H72">
+      <Name>Hydraulic Box Stacker</Name>
+      <Quantity>3</Quantity>
+      <Price>248.00</Price>
+    </Item>
+    <Item PartNumber="BC-CP39">
+      <Name>Crush Proof Baby Crib</Name>
+      <Quantity>2</Quantity>
+      <Price>179.00</Price>
+    </Item>
+  </Items>
+</PurchaseOrder>
