@@ -14,6 +14,7 @@ CREATE USER MAPPING FOR pgsql
   SERVER yard_sales_server
   OPTIONS (username 'jifdw', password 'password1');
 
+-- schema for yard_sales foreign tables
 CREATE SCHEMA yard_sales;
 
 -- map yard sales foreign table product
@@ -30,8 +31,7 @@ CREATE FOREIGN TABLE yard_sales.product (
 ) SERVER yard_sales_server
   OPTIONS (dbname 'janey_yard_sales', table_name 'product');
 
-
-CREATE TABLE customer (
+CREATE FOREIGN TABLE yard_sales.customer (
   customer_id INT NOT NULL,
   customer_first_name VARCHAR(100),
   customer_last_name VARCHAR(100),
@@ -40,11 +40,11 @@ CREATE TABLE customer (
   customer_address2 VARCHAR(100),
   customer_city VARCHAR(100),
   customer_state VARCHAR(100),
-  customer_zip VARCHAR(100),
-  PRIMARY KEY (customer_id)
-);
+  customer_zip VARCHAR(100)
+) SERVER yard_sales_server
+  OPTIONS (dbname 'janey_yard_sales', table_name 'customer');
 
-CREATE TABLE salesorder (
+CREATE FOREIGN TABLE yard_sales.salesorder (
   salesorder_id INT NOT NULL,
   salesorder_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   salesorder_status VARCHAR(64) NOT NULL,
@@ -55,22 +55,23 @@ CREATE TABLE salesorder (
   salesorder_address2 VARCHAR(100),
   salesorder_city VARCHAR(100),
   salesorder_state VARCHAR(100),
-  salesorder_zip VARCHAR(100),
-  PRIMARY KEY (salesorder_id),
-  FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
-);
+  salesorder_zip VARCHAR(100)
+) SERVER yard_sales_server
+  OPTIONS (dbname 'janey_yard_sales', table_name 'salesorder');
 
-CREATE TABLE salesorder_product (
+CREATE FOREIGN TABLE yard_sales.salesorder_product (
   salesorder_id INT NOT NULL,
-  product_id INT NOT NULL,
-  salesorder_product_price NUMERIC(15,2) NOT NULL,
-  PRIMARY KEY (salesorder_id, product_id),
-  FOREIGN KEY (salesorder_id) REFERENCES salesorder(salesorder_id),
-  FOREIGN KEY (product_id) REFERENCES product(product_id)
-);
-
+  product_id INT NOT NULL
+) SERVER yard_sales_server
+  OPTIONS (dbname 'janey_yard_sales', table_name 'salesorder_product');
 
 
 
 -- select etc from table to get data from mysql
-SELECT * FROM salesorder;
+SELECT * FROM yard_sales.product ;
+
+SELECT * FROM yard_sales.customer ;
+
+SELECT * FROM yard_sales.salesorder ;
+
+SELECT * FROM yard_sales.salesorder_product ;
