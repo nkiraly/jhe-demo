@@ -6,8 +6,8 @@ For more information, see http://www.meetup.com/Pittsburgh-PostgreSQL-Users-Grou
 
 
 # Storage Systems in Place
-- Yard Sales - CSV
 - Yard Inventory - CSV
+- Yard Sales - CSV
 - Online Inventory - Redis 3.0
 - Online Sales - MySQL 5.7
 
