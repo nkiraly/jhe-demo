@@ -15,7 +15,7 @@ CREATE USER MAPPING FOR PUBLIC
 CREATE SCHEMA online_inventory;
 
 -- map inventory hash table as a foreign table
-CREATE FOREIGN TABLE online_inventory.inventory_rfth (
+CREATE FOREIGN TABLE online_inventory.inventory (
   key    TEXT,
   field  TEXT,
   value  TEXT,
@@ -26,4 +26,4 @@ CREATE FOREIGN TABLE online_inventory.inventory_rfth (
 
 -- select etc from table to get data from redis
 -- NOTE: you must specify WHERE key for fdw to be able to pull the hash list data
-SELECT * FROM online_inventory.inventory_rfth where key = 'inventory';
+SELECT * FROM online_inventory.inventory where key = 'inventory';

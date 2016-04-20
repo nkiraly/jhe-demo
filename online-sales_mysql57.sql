@@ -13,7 +13,6 @@ CREATE TABLE product (
   -- purchasing related info
   product_added_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   product_cost NUMERIC(15,2) NOT NULL,
-  product_vendor VARCHAR(200),
   PRIMARY KEY (product_id)
 );
 
@@ -72,13 +71,15 @@ CREATE TABLE salesorder_product (
 
 
 INSERT INTO product ( product_id, product_name, product_number, product_price, product_cost ) VALUES ( 201, 'Hydraulic Box Stacker', 'BSH72', 309.95, 248.00 );
-INSERT INTO product ( product_id, product_name, product_number, product_price, product_cost ) VALUES ( 204, 'Crush Proof Baby Crib', 'BCCP39', 224.95, 179.00 );
+INSERT INTO product ( product_id, product_name, product_number, product_price, product_cost ) VALUES ( 204, 'Crush Proof Baby Crib', 'CPBC39', 224.95, 179.00 );
+INSERT INTO product ( product_id, product_name, product_number, product_price, product_cost ) VALUES ( 205, 'Drown Proof Bucket', 'DPB447', 34.95, 27.00 );
 
 INSERT INTO product_group ( product_group_id, product_group_name ) VALUES ( 501, 'Box Stackers' );
 INSERT INTO product_group ( product_group_id, product_group_name ) VALUES ( 504, 'Baby Furniture' );
 
 INSERT INTO product_group_product ( product_group_id, product_id ) VALUES ( 501, 201 );
 INSERT INTO product_group_product ( product_group_id, product_id ) VALUES ( 504, 204 );
+INSERT INTO product_group_product ( product_group_id, product_id ) VALUES ( 504, 205 );
 
 
 INSERT INTO customer ( customer_id, customer_first_name, customer_last_name, customer_address1, customer_city, customer_state, customer_zip ) VALUES ( 1001, 'John', 'Johnson', '1234 Local Road', 'Anytown', 'PA', '15003' );

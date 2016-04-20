@@ -1,7 +1,7 @@
 AUTH janeyg1
 
 # set multiple inventory hash fields to number on hand
-HMSET inventory BSH72 6 BCCP39 5
+HMSET inventory BSH72 6 CPBC39 5 DPB447 9
 
 
 # what keys are in the inventory hash?

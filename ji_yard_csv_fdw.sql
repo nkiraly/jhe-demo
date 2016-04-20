@@ -31,6 +31,8 @@ CREATE FOREIGN TABLE yard_sales.inventory (
 OPTIONS ( filename '/home/vagrant/yard-inventory.csv', format 'csv' );
 
 
+-- select etc from table to get data from CSV files
+
 SELECT * FROM yard_sales.sales;
 
 SELECT * FROM yard_sales.inventory;
