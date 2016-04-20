@@ -1,3 +1,2 @@
-InventoryNo,ProductName,ProductGroup,Quantity,ReorderQuantity,LastOrderDate
-BSH72,Hydraulic Box Stacker,Box Stackers,6,2,2016-02-05T19:37
-BCCP39,Crush Proof Baby Crib,Baby Furniture,5,2,2016-02-05T19:37
+BSH72,Box Stackers,Hydraulic Box Stacker,248.00,6,2,2016-02-05T19:37
+BCCP39,Baby Furniture,Crush Proof Baby Crib,179.00,5,2,2016-02-05T19:37
